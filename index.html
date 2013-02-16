@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HyperPixel</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        body {
+            color: #cccccc;
+            font-family:Monospace;
+            font-size:13px;
+            text-align:center;
+
+            background-color: #050505;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        #container {
+            position: absolute;
+            top: 50%;
+            height: 50%;
+            margin-left: -256px;
+            margin-top: -256px;
+        }
+    </style>
+</head>
+<body>
+<canvas width="512" height="512" id="container"></canvas>
+<script src="three.min.js"></script>
+<script src="hyperpixel.js"></script>
+<script>
+    var hp = new HyperPixel(document.getElementById("container"));
+    setInterval( function(){
+        for(var y = 0 ; y < hp.height; y++){
+            for(var x = 0 ; x < hp.width; x++){
+                hp.setColor(x,y,Math.random(),Math.random(),Math.random());
+            }
+        }
+        hp.update();
+    },1000/60)
+</script>
+</body>
+</html>

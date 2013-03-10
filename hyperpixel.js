@@ -16,7 +16,7 @@ var HyperPixel = function(canvas){
 };
 
 HyperPixel.prototype.getColor = function(x,y,r,g,b){
-    var i = (y*this.height+x)*3;
+    var i = (y*this.width+x)*3;
     return {
         r:this.colors[ i ],
         g: this.colors[ i + 1 ],
@@ -25,7 +25,7 @@ HyperPixel.prototype.getColor = function(x,y,r,g,b){
 };
 
 HyperPixel.prototype.setColor = function(x,y,r,g,b){
-    var i = (y*this.height+x)*3;
+    var i = (y*this.width+x)*3;
     this.colors[ i ]     = r;
     this.colors[ i + 1 ] = g;
     this.colors[ i + 2 ] = b;

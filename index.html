@@ -24,6 +24,19 @@
         image-rendering: pixelated;
         image-rendering: crisp-edges;
       }
+
+      @media screen and (max-aspect-ratio:160/144) {
+        #screen {
+          height: auto;
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translate(0%, -50%);
+          -ms-transform: translate(0%, -50%);
+          -webkit-transform: translate(0%, -50%);
+        }
+       }
     </style>
   </head>
   <body>

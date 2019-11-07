@@ -15,7 +15,7 @@ var HyperPixel = function(canvas){
 
     var geometry = new THREE.BufferGeometry();
     geometry.setAttribute( 'position', new THREE.Float32BufferAttribute( new Array(particles*3), 3 ) );
-		geometry.setAttribute( 'color', new THREE.Float32BufferAttribute( new Array(particles*3), 3 ) );
+    geometry.setAttribute( 'color', new THREE.Float32BufferAttribute( new Array(particles*3), 3 ) );
 
     var positions = geometry.attributes.position.array;
     this.colors = geometry.attributes.color.array;

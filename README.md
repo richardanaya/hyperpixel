@@ -1,6 +1,6 @@
 # hyperpixel
 
-extremely fast pixel framebuffer using webgl
+extremely fast pixel framebuffer using webgl via ThreeJS
 
 [demo](https://richardanaya.github.com/hyperpixel)
 

@@ -1,7 +1,6 @@
-var HyperPixel = function(canvas){
-    this.canvas = canvas;
-    this.width = canvas.width;
-    this.height = canvas.height;
+var HyperPixel = function(canvas,width,height){
+    this.width = width;
+    this.height = height;
     this.camera = new THREE.OrthographicCamera( 0, this.width, 0, this.height, - 2000, 2000 );
     this.camera.position.z = 2000;
 
@@ -29,8 +28,9 @@ HyperPixel.prototype.setColor = function(x,y,r,g,b){
     this.colors[ i + 2 ] = b;
 };
 
-HyperPixel.prototype.update = function() {
+HyperPixel.prototype.rener = function(a) {
     this.particleSystem.geometry.attributes.color.needsUpdate = true;
+    this.renderer.render( this.scene, this.camera );
 };
 
 HyperPixel.prototype.init = function() {

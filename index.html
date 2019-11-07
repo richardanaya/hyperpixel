@@ -5,23 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <style>
-        body {
-            color: #cccccc;
-            font-family:Monospace;
-            font-size:13px;
-            text-align:center;
-
-            background-color: #050505;
+        body,html {
             margin: 0px;
             overflow: hidden;
+	    background: black;
+            height: 100%;
+	    text-align: center;
         }
 
-        #container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-left: -256px;
-            margin-top: -256px;
+        #screen {
+		height: 100%;
+		image-rendering: -moz-crisp-edges;
+		image-rendering: -webkit-crisp-edges;
+	        image-rendering: pixelated;
+	        image-rendering: crisp-edges;
         }
     </style>
 </head>
@@ -33,9 +30,9 @@
 var hp = new HyperPixel(document.getElementById("screen"));
 function update(){
   window.requestAnimationFrame(update);
-  for(var i = 0 ; i < hp.height*hp.width*3; i++){
-    hp.colors[p] = Math.random();
-  }
+  for(i=0;i<hp.width*hp.height*3;i++){
+	hp.colors[i] = Math.random();
+  }	
   hp.render();
 }
 update();

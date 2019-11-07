@@ -2,7 +2,7 @@
 
 extremely fast pixel framebuffer using webgl via ThreeJS
 
-[demo](https://richardanaya.github.com/hyperpixel)
+see the demo [here](https://richardanaya.github.com/hyperpixel)
 
 ```html
 <canvas width="160" height="144" id="screen"></canvas>
@@ -13,7 +13,7 @@ extremely fast pixel framebuffer using webgl via ThreeJS
   function update(){
     window.requestAnimationFrame(update);
     for(var i = 0 ; i < hp.height*hp.width*3; i++){
-      hp.colors[p] = Math.random();
+      hp.colors[i] = Math.random();
     }
     hp.render();
   }

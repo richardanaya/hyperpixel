@@ -1,41 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>HyperPixel</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
     <style>
-        body,html {
-            margin: 0px;
-            overflow: hidden;
-	    background: black;
-            height: 100%;
-	    text-align: center;
-        }
+      body,
+      html {
+        margin: 0px;
+        overflow: hidden;
+        background: black;
+        height: 100%;
+        text-align: center;
+      }
 
-        #screen {
-		height: 100%;
-		image-rendering: -moz-crisp-edges;
-		image-rendering: -webkit-crisp-edges;
-	        image-rendering: pixelated;
-	        image-rendering: crisp-edges;
-        }
+      #screen {
+        height: 100%;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -webkit-crisp-edges;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+      }
     </style>
-</head>
-<body>
-<canvas width="160" height="144" id="screen"></canvas>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
-<script src="hyperpixel.js"></script>
-<script>
-var hp = new HyperPixel(document.getElementById("screen"));
-function update(){
-  window.requestAnimationFrame(update);
-  for(i=0;i<hp.width*hp.height*3;i++){
-	hp.colors[i] = Math.random();
-  }	
-  hp.render();
-}
-update();
-</script>
-</body>
+  </head>
+  <body>
+    <canvas width="160" height="144" id="screen"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
+    <script src="hyperpixel.js"></script>
+    <script>
+      var hp = new HyperPixel(document.getElementById("screen"));
+      function update() {
+        window.requestAnimationFrame(update);
+        for (i = 0; i < hp.width * hp.height * 3; i++) {
+          hp.colors[i] = Math.random();
+        }
+        hp.render();
+      }
+      update();
+    </script>
+  </body>
 </html>

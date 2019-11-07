@@ -32,7 +32,10 @@ var HyperPixel = function(canvas){
     this.renderer = new THREE.WebGLRenderer({canvas: this.canvas});
 };
 
-HyperPixel.prototype.render = function() {
+HyperPixel.prototype.render = function(data) {
+    if(data){
+	this.particleSystem.geometry.attributes.color.array = data;
+    }
     this.particleSystem.geometry.attributes.color.needsUpdate = true;
     this.renderer.render( this.scene, this.camera );
 };

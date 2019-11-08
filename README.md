@@ -28,9 +28,9 @@ see the demo [here](https://richardanaya.github.com/hyperpixel/examples/static/i
 ```toml
 [dependencies]
 hyperpixel = "0.0.0"
-web_timer = "0.0.2"
-rand = "0.7.2"
-js_ffi = "0.1"
+web_timer = "0.0.2" # for interacting with timing functions in browser
+rand = "0.7.2" # for getting a psuedo random number generator
+js_ffi = "0.1" # for creating the callback that gets sent into web_timer's `request_animation_loop`
 ```
 ```rust
 use hyperpixel::*;

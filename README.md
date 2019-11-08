@@ -23,7 +23,7 @@ see the demo [here](https://richardanaya.github.com/hyperpixel)
 
 # With Rust?
 
-see the demo [here](https://richardanaya.github.com/examples/helloworld/index.html)
+see the demo [here](https://richardanaya.github.com/hyperpixel/examples/helloworld/index.html)
 
 ```toml
 [dependencies]

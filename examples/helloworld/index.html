@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HyperPixel</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <style>
+      body,
+      html {
+        margin: 0px;
+        overflow: hidden;
+        background: black;
+        height: 100%;
+        text-align: center;
+      }
+
+      #screen {
+        height: 100%;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -webkit-crisp-edges;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+      }
+
+      @media screen and (max-aspect-ratio:160/144) {
+        #screen {
+          height: auto;
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translate(0%, -50%);
+          -ms-transform: translate(0%, -50%);
+          -webkit-transform: translate(0%, -50%);
+        }
+       }
+    </style>
+  </head>
+  <body>
+    <canvas width="160" height="144" id="screen"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/richardanaya/hyperpixel/hyperpixel.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/richardanaya/js_ffi/js_ffi.js"></script>
+    <script>js_ffi.run("example.wasm");</script>
+  </body>
+</html>

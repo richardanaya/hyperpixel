@@ -28,6 +28,9 @@ see the demo [here](https://richardanaya.github.com/hyperpixel/examples/static/i
 ```toml
 [dependencies]
 hyperpixel = "0.0.0"
+web_timer = "0.0.2"
+rand = "0.7.2"
+js_ffi = "0.1"
 ```
 ```rust
 use hyperpixel::*;

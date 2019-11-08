@@ -22,7 +22,10 @@ see the demo [here](https://richardanaya.github.com/hyperpixel)
 ```
 
 # With Rust?
-
+```toml
+[dependencies]
+hyperpixel = "0.0.0"
+```
 ```rust
 use hyperpixel::*;
 use rand::SeedableRng;

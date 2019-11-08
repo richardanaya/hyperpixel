@@ -22,6 +22,9 @@ see the demo [here](https://richardanaya.github.com/hyperpixel)
 ```
 
 # With Rust?
+
+see the demo [here](https://richardanaya.github.com/hyperpixel/examples/helloworld/index.html)
+
 ```toml
 [dependencies]
 hyperpixel = "0.0.0"

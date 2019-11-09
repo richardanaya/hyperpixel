@@ -17,7 +17,7 @@ see the demo [here](https://richardanaya.github.com/hyperpixel)
   function update(){
     window.requestAnimationFrame(update);
     for(var i = 0 ; i < hp.height*hp.width*3; i++){
-      hp.colors[i] = Math.random();
+      hp.colors[i] = Math.random()*.3;
     }
     hp.render();
   }
@@ -58,7 +58,7 @@ pub fn main() -> () {
     let mut pixels = vec![0.0_f32; WIDTH * HEIGHT * 3];
     timer.request_animation_loop(create_callback_1(Box::new(move |delta_time| {
         for i in 0..pixels.len() {
-            pixels[i] = rng.gen();
+            pixels[i] = rng.gen::<f32>()*.3;
         }
         framebuffer.render(&pixels)
     })))

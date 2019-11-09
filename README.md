@@ -2,6 +2,8 @@
 
 An extremely fast pixel framebuffer using webgl via ThreeJS
 
+Why is this fast? Rendering literally just takes subview of wasm's memory and pushes it to the GPU.
+
 see the demo [here](https://richardanaya.github.com/hyperpixel)
 
 ```html

@@ -4,6 +4,8 @@ pub struct HyperPixel {
     instance:JSValue,
     fn_init:JSValue,
     fn_render:JSValue,
+    fn_width:JSValue,
+    fn_height:JSValue,
 }
 
 impl HyperPixel {
@@ -19,6 +21,12 @@ impl HyperPixel {
                 let pixelView = (new Float32Array(mem)).subarray(p,p+length);
                 this.render(pixelView);
             })"),
+            fn_width:register("(function(mem,ptr,length){
+                return this.width;
+            })"),
+            fn_height:register("(function(mem,ptr,length){
+                return this.height;
+            })"),
         };
         h.init(selector);
         h
@@ -26,6 +34,13 @@ impl HyperPixel {
 
     fn init(&mut self,selector:&str) {
         self.instance = call_1(UNDEFINED,self.fn_init,TYPE_STRING, to_js_string(selector))
+    }
+
+    /// Dimensions of the screen as tuple (width,height).
+    pub fn dimensions(&self) -> (usize,usize) {
+        let w = call_0(self.instance,self.fn_width) as usize;
+        let h = call_0(self.instance,self.fn_height) as usize;
+        (w,h)
     }
 
     /// Send a slice of float32 values to be pushed to the GPU and update the framebuffer immediately.

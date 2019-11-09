@@ -33,7 +33,7 @@ see the demo [here](https://richardanaya.github.com/hyperpixel/examples/static/i
 
 ```toml
 [dependencies]
-hyperpixel = "0.0.3"
+hyperpixel = "0.1"
 web_timer = "0.0.2" # for interacting with timing functions in browser
 rand = "0.7.2" # for getting a psuedo random number generator
 js_ffi = "0.1" # for creating the callback that gets sent into web_timer's `request_animation_loop`
@@ -46,9 +46,6 @@ use rand::SeedableRng;
 use web_timer::*;
 use js_ffi::*;
 
-const WIDTH: usize = 160;
-const HEIGHT: usize = 144;
-
 #[no_mangle]
 pub fn main() -> () {
     let timer = Timer::default();
@@ -57,7 +54,8 @@ pub fn main() -> () {
         3, 4,
     ]);
     let framebuffer = HyperPixel::new("#screen");
-    let mut pixels = vec![0.0_f32; WIDTH * HEIGHT * 3];
+    let (width,height) = framebuffer.dimensions()
+    let mut pixels = vec![0.0_f32; width * height * 3];
     timer.request_animation_loop(create_callback_1(Box::new(move |delta_time| {
         for i in 0..pixels.len() {
             pixels[i] = rng.gen::<f32>()*.3;

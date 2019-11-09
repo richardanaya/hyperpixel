@@ -34,29 +34,27 @@ see the demo [here](https://richardanaya.github.com/hyperpixel/examples/static/i
 ```toml
 [dependencies]
 hyperpixel = "0.1"
-web_timer = "0.0.2" # for interacting with timing functions in browser
-web_random = "0.0.0" # for generating random numbers efficiently
-js_ffi = "0.1" # for creating the callback that gets sent into web_timer's `request_animation_loop`
+web_timer = "0.1" # for interacting with timing functions in browser
+web_random = "0.0" # for generating random numbers efficiently
 ```
 ```rust
 use hyperpixel::*;
-use web_random::*;
 use web_timer::*;
-use js_ffi::*;
+use web_random::*;
 
 #[no_mangle]
 pub fn main() -> () {
     let timer = Timer::default();
     let mut random = Random::default();
     let framebuffer = HyperPixel::new("#screen");
-    let (width,height) = framebuffer.dimensions()
+    let (width,height) = framebuffer.dimensions();
     let mut pixels = vec![0.0; width * height * 3];
-    timer.request_animation_loop(create_callback_1(Box::new(move |delta_time| {
+    timer.request_animation_loop(Box::new(move |_delta| {
         for i in 0..pixels.len() {
-            pixels[i] = random.gen::<f32>()*.3;
+            pixels[i] = random.gen::<f32>()*0.3;
         }
         framebuffer.render(&pixels)
-    })))
+    }))
 }
 ```
 

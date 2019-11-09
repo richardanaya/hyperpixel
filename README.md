@@ -54,7 +54,7 @@ pub fn main() -> () {
             pixels[i] = random.gen::<f32>()*0.3;
         }
         framebuffer.render(&pixels)
-    }))
+    }));
 }
 ```
 

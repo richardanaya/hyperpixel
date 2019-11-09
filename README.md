@@ -56,7 +56,7 @@ pub fn main() -> () {
     ]);
     let framebuffer = HyperPixel::new("#screen");
     let mut pixels = vec![0.0_f32; WIDTH * HEIGHT * 3];
-    timer.request_animation_loop(create_callback_1(Box::new(move |_delta| {
+    timer.request_animation_loop(create_callback_1(Box::new(move |delta_time| {
         for i in 0..pixels.len() {
             pixels[i] = rng.gen();
         }

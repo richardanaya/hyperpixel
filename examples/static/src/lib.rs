@@ -5,8 +5,8 @@ use rand::SeedableRng;
 use web_timer::*;
 use js_ffi::*;
 
-const WIDTH: usize = 160;
-const HEIGHT: usize = 144;
+const WIDTH: usize = 600;
+const HEIGHT: usize = 400;
 
 #[no_mangle]
 pub fn main() -> () {

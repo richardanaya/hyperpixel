@@ -13,7 +13,11 @@ impl HyperPixel {
             fn_init:register("(selector)=>{
                     return new HyperPixel(document.querySelector(selector));
                 }"),
-            fn_render:register("HyperPixel.prototype.render"),
+            fn_render:register("(function(mem,ptr,length){
+                let p = ptr/4;
+                let pixelView = (new Float32Array(mem)).subarray(p,p+length);
+                this.render(pixelView);
+            })"),
         };
         h.init(selector);
         h
@@ -22,7 +26,7 @@ impl HyperPixel {
         self.instance = call_1(UNDEFINED,self.fn_init,TYPE_STRING, to_js_string(selector))
     }
 
-    pub fn render(&self,colors:&Vec<f32>){
-        call_1(self.instance,self.fn_render,TYPE_F32_ARRAY, to_js_typed_array(colors).as_js_ptr());
+    pub fn render(&self,colors:&[f32]){
+        call_3(self.instance,self.fn_render,TYPE_MEMORY, 0.0 as JSValue, TYPE_NUM, colors.as_ptr() as usize as JSValue, TYPE_NUM, colors.len() as f64 as JSValue);
     }
 }

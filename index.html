@@ -48,7 +48,7 @@
       function update() {
         window.requestAnimationFrame(update);
         for (i = 0; i < hp.width * hp.height * 3; i++) {
-          hp.colors[i] = Math.random();
+          hp.colors[i] = Math.random()*.3;
         }
         hp.render();
       }

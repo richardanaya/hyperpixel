@@ -1,4 +1,4 @@
-# hyperpixel
+# 🧱 hyperpixel
 
 <a href="https://docs.rs/hyperpixel"><img src="https://img.shields.io/badge/docs-latest-blue.svg?style=flat-square" alt="docs.rs docs" /></a>
 

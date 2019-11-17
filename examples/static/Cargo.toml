@@ -9,8 +9,8 @@ edition = "2018"
 [dependencies]
 hyperpixel = {path="../../"}
 web_timer = "0.1"
-web_random = "0.0.0"
-js_ffi = "0.1"
+web_random = "0.0"
+js_ffi = "0.5"
 
 [lib]
 crate-type =["cdylib"]

@@ -8,7 +8,7 @@ An extremely fast pixel framebuffer using webgl via ThreeJS
 
 Rendering literally just takes a Float32Array subview of wasm's memory and pushes it to the GPU via webgl to be rendered by an uber minimal shader for particles.
 
-see the demo [here](https://richardanaya.github.com/hyperpixel)
+see the demo [here](https://richardanaya.github.io/hyperpixel)
 
 ```html
 <canvas width="160" height="144" id="screen"></canvas>
@@ -29,7 +29,7 @@ see the demo [here](https://richardanaya.github.com/hyperpixel)
 
 # With Rust?
 
-see the demo [here](https://richardanaya.github.com/hyperpixel/examples/static/index.html)
+see the demo [here](https://richardanaya.github.io/hyperpixel/examples/static/index.html)
 
 ```toml
 [dependencies]
